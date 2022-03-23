@@ -39,7 +39,5 @@ include 'partials/header.php';
         </tbody>
     </table>
 </div>
-</body>
-</html>
 
 <?php include 'partials/footer.php'; ?>
