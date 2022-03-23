@@ -19,7 +19,15 @@ function createUser($data) {
 }
 
 function updateUser($data, $id) {
-    
+    $users = getUsers();
+    foreach ($users as $i=>$user) {
+        if ($user['id'] == $id) {
+            $users[$i] = array_merge($user, $data); // read more in this part
+        }
+    }
+
+    file_put_contents('users.json', json_encode($users));
+
 }
 
 function deleteUser($id) {
