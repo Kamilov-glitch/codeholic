@@ -21,7 +21,7 @@
             "catchPhrase": "Multi-layered client-server neural-net",
             "bs": "harness real-time e-markets"
         },
-        "extension": "png"
+        "extension": "jpg"
     },
     {
         "id": 2,
@@ -68,7 +68,8 @@
             "name": "Romaguera-Jacobson",
             "catchPhrase": "Face to face bifurcated interface",
             "bs": "e-enable strategic applications"
-        }
+        },
+        "extension": "jpg"
     },
     {
         "id": 4,
@@ -138,7 +139,8 @@
             "name": "Considine-Lockman",
             "catchPhrase": "Synchronised bottom-line interface",
             "bs": "e-enable innovative applications"
-        }
+        },
+        "extension": "jpg"
     },
     {
         "id": 7,
@@ -161,7 +163,8 @@
             "name": "Johns Group",
             "catchPhrase": "Configurable multimedia task-force",
             "bs": "generate enterprise e-tailers"
-        }
+        },
+        "extension": "jpg"
     },
     {
         "id": 8,
@@ -207,7 +210,8 @@
             "name": "Yost and Sons",
             "catchPhrase": "Switchable contextually-based project",
             "bs": "aggregate real-time technologies"
-        }
+        },
+        "extension": "jpg"
     },
     {
         "id": 10,
@@ -231,5 +235,14 @@
             "catchPhrase": "Centralized empowering task-force",
             "bs": "target end-to-end models"
         }
+    },
+    {
+        "name": "John Doe",
+        "username": "john",
+        "email": "john@example.com",
+        "phone": "1234",
+        "website": "john.com",
+        "id": 1125886,
+        "extension": "png"
     }
 ]
