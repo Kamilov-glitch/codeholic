@@ -27,7 +27,7 @@ function updateUser($data, $id) {
         }
     }
 
-    file_put_contents('users/users.json', json_encode($users));
+    file_put_contents('users/users.json', json_encode($users, JSON_PRETTY_PRINT));
 
     return $updateUser;
 }
