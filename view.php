@@ -22,8 +22,8 @@ if (!$user) {
             <h3>View User: <b><?php echo $user['name'] ?></b></h3>
         </div>
         <div class="card-body">
-            <a class="btn btn-secondary" href="update.php"?<?php echo $user['id'] ?>>Update</a>
-            <a class="btn btn-danger" href="delete.php"?<?php echo $user['id'] ?>>Delete</a>
+            <a class="btn btn-secondary" href="update.php?id=<?php echo $user['id'] ?>">Update</a>
+            <a class="btn btn-danger" href="delete.php?id=<?php echo $user['id'] ?>">Delete</a>
         </div>
         <table class="table">
             <tbody>
