@@ -64,3 +64,36 @@ function uploadImage($file, $user) {
 function putJson($users) {
     file_put_contents(__DIR__ . '/users.json', json_encode($users, JSON_PRETTY_PRINT));
 }
+
+function validateUser($post, $errors) {
+    $name = $post['name'];
+    $username = $post['username'];
+    $email = $post['email'];
+    $phone = $post['phone'];
+    $website = $post['website'];
+    $isValid = true;
+    if (!$name) {
+        $isValid = false;
+        $errors['name'] = "Name is mandatory";
+    }
+    if (!$username || strlen($username) < 6 || strlen($username) > 16) {
+        $isValid = false;
+        $errors['username'] = "Username is required and it must be more than 6 and less than 16 characters";
+    }
+
+    if (!$email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $isValid = false;
+        $errors['email'] = "Email address is not valid";
+    }
+
+    if (!filter_var($phone, FILTER_VALIDATE_INT)) {
+        $isValid = false;
+        $errors['phone'] = "This must be a valid phone number";
+    }
+
+    if (!filter_var($website, FILTER_VALIDATE_DOMAIN)) {
+        $isValid = false;
+        $errors['website'] = "This must be a valid website";
+    }
+    return [$isValid, $errors];
+}

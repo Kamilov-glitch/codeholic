@@ -14,14 +14,22 @@ if (!$user) {
     exit;
 }
 
+$errors=[
+    'name' => "",
+    'username' => "",
+    'email' => "",
+    'phone' => "",
+    'website' => "",
+];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = updateUser($_POST, $userId);
-
-
-    uploadImage($_FILES['picture'], $user);
-
-
-    header("Location: index.php");
+    $isValid = validateUser($_POST, $errors)[0];
+    $errors = validateUser($_POST, $errors)[1];
+    if ($isValid) {
+        $user = updateUser($_POST, $userId);
+        uploadImage($_FILES['picture'], $user);
+        header("Location: index.php");
+    }
 }
 
 

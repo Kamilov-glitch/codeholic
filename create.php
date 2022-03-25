@@ -11,12 +11,30 @@ $user = [
     'website' => ''
 ];
 
+$errors=[
+    'name' => "",
+    'username' => "",
+    'email' => "",
+    'phone' => "",
+    'website' => "",
+];
+
+$isValid = true;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = createUser($_POST);
+    $user = array_merge($user, $_POST);
 
-    uploadImage($_FILES['picture'], $user);
+    $isValid = validateUser($_POST, $errors)[0];
+    $errors = validateUser($_POST, $errors)[1];
 
-    header("Location: index.php");
+    if ($isValid) {
+
+        $user = createUser($_POST);
+
+        uploadImage($_FILES['picture'], $user);
+
+        header("Location: index.php");
+    }
 }
 
 include '_form.php';
